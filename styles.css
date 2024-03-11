@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.img_container {
+  width: 59.8rem;
+  height: 54.1rem;
+  position: relative;
+  border: 1px solid red;
+}
+
+.bacgkorund-circle {
+  filter: blur(2px);
+}
+
+@keyframes floating {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  33% {
+    transform: rotate(-3deg);
+  }
+
+  66% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.desktop {
+  position: absolute;
+  top: 8%;
+  left: 2%;
+}
+
+.laptop {
+  position: absolute;
+  bottom: 8%;
+  right: 2%;
+}
+
+.phone-one {
+  position: absolute;
+  left: 2%;
+  bottom: 8%;
+  transition: all 0.3s;
+}
+
+.phone-two {
+  position: absolute;
+  right: 2%;
+  top: 8%;
+}
+
+.the-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.phone-one:hover {
+  cursor: pointer;
+  transform: rotate(30deg);
+}
+
+.desktop:hover,
+.laptop:hover,
+.phone-two:hover {
+  cursor: pointer;
+  animation: 3s infinite floating;
+}
+
+.jwt-desktop,
+.jwt-laptop,
+.jwt-phone-one {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+  height: 49px;
+  width: 37px;
+}
+
+#server_background {
+  transition: all 0.3s;
+}
+
+/*Desktop and laptop texts*/
+
+#Confirmation_Box,
+#Send_Button,
+#Confirmation_Laptop,
+#Download_Button,
+#checkmark,
+#deniedDB,
+#server_error,
+#sign_up {
+  transition: all 0.3s;
+  opacity: 0;
+}
