@@ -58,8 +58,9 @@ html {
 
 .phone-two {
   position: absolute;
-  right: 2%;
+  right: 2.5%;
   top: 8%;
+  transition: all 0.3s;
 }
 
 .the-cloud {
@@ -75,15 +76,20 @@ html {
 }
 
 .desktop:hover,
-.laptop:hover,
-.phone-two:hover {
+.laptop:hover {
   cursor: pointer;
   animation: 3s infinite floating;
 }
 
+.phone-two:hover {
+  cursor: pointer;
+  transform: rotate(-65deg);
+}
+
 .jwt-desktop,
 .jwt-laptop,
-.jwt-phone-one {
+.jwt-phone-one,
+.jwt-phone-two {
   position: absolute;
   opacity: 0;
   transition: all 0.3s;
@@ -105,7 +111,9 @@ html {
 #checkmark,
 #deniedDB,
 #server_error,
-#sign_up {
+#sign_up,
+#play_button,
+#not_found {
   transition: all 0.3s;
   opacity: 0;
 }

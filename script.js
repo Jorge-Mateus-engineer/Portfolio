@@ -1,6 +1,8 @@
 const container = document.querySelector(".img_container");
 const jwtDesktop = document.querySelector(".jwt-desktop");
 const jwtLaptop = document.querySelector(".jwt-laptop");
+const jwtPhoneOne = document.querySelector(".jwt-phone-one");
+const jwtPhoneTwo = document.querySelector(".jwt-phone-two");
 
 const codeUnderline = document.getElementById("code_underline");
 const databaseCheckmark = document.getElementById("checkmark");
@@ -21,9 +23,14 @@ const phoneOne = document.querySelector(".phone-one");
 const phoneSignUp = document.getElementById("sign_up");
 const phoneError = document.getElementById("server_error");
 
+const phoneTwo = document.querySelector(".phone-two");
+const phonePlayBtn = document.getElementById("play_button");
+const phoneNotFound = document.getElementById("not_found");
+
 let desktopAnimating = false;
 let laptopAnimating = false;
 let phoneOneAnimating = false;
+let phoneTwoAnimating = false;
 
 const animateRequest = function (
   jwtIcon,
@@ -108,84 +115,91 @@ const animateRequest = function (
   );
 };
 
+const animationSetUp = function (
+  parent,
+  initialIcon,
+  finalIcon,
+  jwt,
+  animationControlVar,
+  succesControlVar,
+  initialX,
+  initialY
+) {
+  /*Mostrar el icono inicial y ocultar el icono final al entrar el mouse en el elemento */
+  parent.addEventListener("mouseenter", () => {
+    if (!animationControlVar) {
+      initialIcon.style.opacity = 1;
+    }
+    finalIcon.style.opacity = 0;
+  });
+
+  /*Ocultar todos los iconos visibles al sacar el mouse del elemento */
+  parent.addEventListener("mouseleave", () => {
+    initialIcon.style.opacity = 0;
+    finalIcon.style.opacity = 0;
+  });
+
+  parent.addEventListener("click", () => {
+    animationControlVar = true;
+    initialIcon.style.opacity = 0;
+    setTimeout(() => {
+      finalIcon.style.opacity = 1;
+      databaseCheckmark.style.opacity = 0;
+      databaseDenied.style.opacity = 0;
+      animationControlVar = false;
+    }, 4500);
+    animateRequest(jwt, initialX, initialY, succesControlVar);
+  });
+};
+
 /*Animaciones pc escritorio */
 
-desktop.addEventListener("mouseenter", () => {
-  /* desktopAnimating: Para prevenir multiples animaciones si ya se esta ejuecutando una */
-  if (!desktopAnimating) {
-    desktopSend.style.opacity = 1;
-  }
-  desktopConfirmation.style.opacity = 0;
-});
-
-desktop.addEventListener("mouseleave", () => {
-  desktopSend.style.opacity = 0;
-  desktopConfirmation.style.opacity = 0;
-});
-
-desktop.addEventListener("click", () => {
-  desktopAnimating = true;
-  desktopSend.style.opacity = 0;
-  setTimeout(() => {
-    desktopConfirmation.style.opacity = 1;
-    databaseCheckmark.style.opacity = 0;
-    desktopAnimating = false;
-  }, 4500);
-
-  animateRequest(jwtDesktop, "9.5", "12", false);
-});
+animationSetUp(
+  desktop,
+  desktopSend,
+  desktopConfirmation,
+  jwtDesktop,
+  desktopAnimating,
+  false,
+  "9.5",
+  "12"
+);
 
 /*Animaciones laptop */
 
-laptop.addEventListener("mouseenter", () => {
-  if (!laptopAnimating) {
-    laptopDownload.style.opacity = 1;
-  }
-  laptopConfirmation.style.opacity = 0;
-});
-
-laptop.addEventListener("mouseleave", () => {
-  laptopDownload.style.opacity = 0;
-  laptopConfirmation.style.opacity = 0;
-});
-
-laptop.addEventListener("click", () => {
-  laptopAnimating = true;
-  laptopDownload.style.opacity = 0;
-
-  setTimeout(() => {
-    laptopConfirmation.style.opacity = 1;
-    databaseDenied.style.opacity = 0;
-    laptopAnimating = false;
-  }, 4500);
-
-  animateRequest(jwtLaptop, "80", "76", true);
-});
+animationSetUp(
+  laptop,
+  laptopDownload,
+  laptopConfirmation,
+  jwtLaptop,
+  laptopAnimating,
+  true,
+  "80",
+  "76"
+);
 
 /*Animaciones primer celular */
 
-phoneOne.addEventListener("mouseenter", () => {
-  if (!phoneOneAnimating) {
-    phoneSignUp.style.opacity = 1;
-  }
-  phoneError.style.opacity = 0;
-});
+animationSetUp(
+  phoneOne,
+  phoneSignUp,
+  phoneError,
+  jwtPhoneOne,
+  phoneOneAnimating,
+  true,
+  "12",
+  "72"
+);
 
-phoneOne.addEventListener("mouseleave", () => {
-  phoneSignUp.style.opacity = 0;
+/*83, 19*/
 
-  phoneError.style.opacity = 0;
-});
-
-phoneOne.addEventListener("click", () => {
-  phoneOneAnimating = true;
-  phoneSignUp.style.opacity = 0;
-
-  setTimeout(() => {
-    phoneError.style.opacity = 1;
-    databaseDenied.style.opacity = 0;
-    phoneOneAnimating = false;
-  }, 4500);
-
-  animateRequest(jwtLaptop, "12", "72", true);
-});
+animationSetUp(
+  phoneTwo,
+  phonePlayBtn,
+  phoneNotFound,
+  jwtPhoneTwo,
+  phoneTwoAnimating,
+  true,
+  "83",
+  "19"
+);
