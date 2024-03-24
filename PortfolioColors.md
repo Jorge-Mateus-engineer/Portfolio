@@ -8,6 +8,7 @@ Main Color: #7300FF
   -#811aff - 10%
   -#ab66ff - 40%
   -#c799ff - 60%
+  -#e3ccff - 80%
   -#f1e6ff - 90%
 
 Accent Color: #8CFF00

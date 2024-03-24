@@ -1,22 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-.img_container {
-  width: 59.8rem;
-  height: 54.1rem;
-  position: relative;
-  border: 1px solid red;
-}
-
 .bacgkorund-circle {
-  filter: blur(2px);
+  filter: blur(1px);
 }
 
 @keyframes floating {
@@ -100,20 +83,4 @@ html {
 
 #server_background {
   transition: all 0.3s;
-}
-
-/*Desktop and laptop texts*/
-
-#Confirmation_Box,
-#Send_Button,
-#Confirmation_Laptop,
-#Download_Button,
-#checkmark,
-#deniedDB,
-#server_error,
-#sign_up,
-#play_button,
-#not_found {
-  transition: all 0.3s;
-  opacity: 0;
 }
