@@ -1,5 +1,6 @@
 .bacgkorund-circle {
-  filter: blur(1px);
+  filter: blur(5px);
+  opacity: 0.4;
 }
 
 @keyframes floating {
@@ -83,4 +84,20 @@
 
 #server_background {
   transition: all 0.3s;
+}
+
+/*Desktop and laptop texts*/
+
+#Confirmation_Box,
+#Send_Button,
+#Confirmation_Laptop,
+#Download_Button,
+#checkmark,
+#deniedDB,
+#server_error,
+#sign_up,
+#play_button,
+#not_found {
+  transition: all 0.3s;
+  opacity: 0;
 }
