@@ -94,8 +94,7 @@ header {
 
 /*Hero*/
 
-.hero-section,
-.about-section {
+.hero-section {
   padding: 4.8rem 0 9.6rem 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -136,7 +135,7 @@ header {
 .hero-btn {
   font-size: 2.4rem;
   transition: all 0.4s;
-  padding: 0.8rem 1.6rem;
+  padding: 1.2rem 2.4rem;
   text-decoration: none;
   border-radius: 8px;
 }
@@ -171,6 +170,7 @@ header {
 
 .about-section {
   margin-bottom: 6.4rem;
+  padding: 4.8rem 0 3.2rem 0;
 }
 
 .about-description {
@@ -179,6 +179,9 @@ header {
 
 .about-tittle {
   font-size: 3.6rem;
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 2.4rem;
   color: var(--greys-color);
 }
 
@@ -283,4 +286,12 @@ header {
   font-size: 1.6rem;
   padding: 0.4rem;
   background-color: var(--accent-color-shade60);
+  transition: all 0.3s;
+}
+
+.tag:hover {
+  cursor: pointer;
+  color: var(--main-color);
+  transform: translate3d(-0.4rem, -0.4rem, 0);
+  box-shadow: 0.4rem 0.4rem;
 }

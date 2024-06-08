@@ -22,7 +22,7 @@ const projectsData = [
     index: "p2",
     description:
       "Pagina web fullstack, el frontend fue realizado con plantillas PUG. El backend fue diseñado con el modelo MVC utilizando Node.js y Express JS, cuenta con sistema de autenticacion basado en JWT. Para la base de datos se usó MongoDB con funcionalidades avanzadas como queries geograficas.",
-    src: "./img/Images/Growth_Crafter.webp",
+    src: "./img/Images/Natours.webp",
     technologies: [
       "Node.js",
       "Express JS",
@@ -48,9 +48,9 @@ const projectsData = [
   {
     index: "p5",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. At nonreprehenderit consectetur quibusdam animi soluta! Eos",
+      "Sitio web de portafolio hecho a pedido para la diseñadora, fotografa e ilustradora Jessica Peña.",
     src: "./img/Images/Portfolio_Jessica.webp",
-    technologies: ["Node.js", "HTML", "CSS", "Javascript"],
+    technologies: ["Node.js", "Parcel JS", "HTML", "CSS", "Javascript"],
   },
 ];
 
